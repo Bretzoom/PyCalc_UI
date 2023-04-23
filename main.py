@@ -13,6 +13,7 @@ class MainWindow(customtkinter.CTk):
         self.textbox = customtkinter.CTkTextbox(master=self, width=600, height=100, corner_radius=0)
         self.textbox.grid(row=0, column=0, sticky="nsew")
 
+        # Button 1
         self.button1 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -23,6 +24,7 @@ class MainWindow(customtkinter.CTk):
         self.button1.place(relx=0.1,
                            rely=0.7,
                            anchor=tkinter.N)
+        # Button 2
         self.button2 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -33,6 +35,7 @@ class MainWindow(customtkinter.CTk):
         self.button2.place(relx=0.3,
                            rely=0.7,
                            anchor=tkinter.N)
+        # Button 3
         self.button3 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -43,6 +46,7 @@ class MainWindow(customtkinter.CTk):
         self.button3.place(relx=0.5,
                            rely=0.7,
                            anchor=tkinter.N)
+        # Button 4
         self.button4 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -53,6 +57,7 @@ class MainWindow(customtkinter.CTk):
         self.button4.place(relx=0.1,
                            rely=0.55,
                            anchor=tkinter.N)
+        # Button 5
         self.button5 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -63,6 +68,7 @@ class MainWindow(customtkinter.CTk):
         self.button5.place(relx=0.3,
                            rely=0.55,
                            anchor=tkinter.N)
+        # Button 6
         self.button6 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -73,6 +79,7 @@ class MainWindow(customtkinter.CTk):
         self.button6.place(relx=0.5,
                            rely=0.55,
                            anchor=tkinter.N)
+        # Button 7
         self.button7 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -83,6 +90,7 @@ class MainWindow(customtkinter.CTk):
         self.button7.place(relx=0.1,
                            rely=0.4,
                            anchor=tkinter.N)
+        # Button 8
         self.button8 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -93,6 +101,7 @@ class MainWindow(customtkinter.CTk):
         self.button8.place(relx=0.3,
                            rely=0.4,
                            anchor=tkinter.N)
+        # Button 9
         self.button9 = customtkinter.CTkButton(self,
                                                width=100,
                                                height=50,
@@ -103,6 +112,7 @@ class MainWindow(customtkinter.CTk):
         self.button9.place(relx=0.5,
                            rely=0.4,
                            anchor=tkinter.N)
+        # Button 0
         self.button0 = customtkinter.CTkButton(self,
                                                width=220,
                                                height=50,
@@ -113,6 +123,7 @@ class MainWindow(customtkinter.CTk):
         self.button0.place(relx=0.2,
                            rely=0.9,
                            anchor=tkinter.CENTER)
+        # Button +
         self.buttonPlus = customtkinter.CTkButton(self,
                                                   width=100,
                                                   height=50,
@@ -123,6 +134,7 @@ class MainWindow(customtkinter.CTk):
         self.buttonPlus.place(relx=0.7,
                               rely=0.7,
                               anchor=tkinter.N)
+        # Button -
         self.buttonMinus = customtkinter.CTkButton(self,
                                                    width=100,
                                                    height=50,
@@ -133,6 +145,7 @@ class MainWindow(customtkinter.CTk):
         self.buttonMinus.place(relx=0.7,
                                rely=0.55,
                                anchor=tkinter.N)
+        # Button /
         self.buttonDiv = customtkinter.CTkButton(self,
                                                  width=100,
                                                  height=50,
@@ -143,6 +156,7 @@ class MainWindow(customtkinter.CTk):
         self.buttonDiv.place(relx=0.7,
                              rely=0.25,
                              anchor=tkinter.N)
+        # Button X
         self.buttonMult = customtkinter.CTkButton(self,
                                                   width=100,
                                                   height=50,
@@ -153,6 +167,7 @@ class MainWindow(customtkinter.CTk):
         self.buttonMult.place(relx=0.7,
                               rely=0.4,
                               anchor=tkinter.N)
+        # Button =
         self.buttonEqual = customtkinter.CTkButton(self,
                                                    width=100,
                                                    height=50,
@@ -163,16 +178,50 @@ class MainWindow(customtkinter.CTk):
         self.buttonEqual.place(relx=0.7,
                                rely=0.9,
                                anchor=tkinter.CENTER)
-        self.buttonTochka = customtkinter.CTkButton(self,
-                                                    width=100,
-                                                    height=50,
-                                                    border_width=0,
-                                                    corner_radius=8,
-                                                    text=".",
-                                                    command=self.button_point_click)
-        self.buttonTochka.place(relx=0.5,
-                                rely=0.9,
-                                anchor=tkinter.CENTER)
+        # Button .
+        self.buttonPoint = customtkinter.CTkButton(self,
+                                                   width=100,
+                                                   height=50,
+                                                   border_width=0,
+                                                   corner_radius=8,
+                                                   text=".",
+                                                   command=self.button_point_click)
+        self.buttonPoint.place(relx=0.5,
+                               rely=0.9,
+                               anchor=tkinter.CENTER)
+        # Button C
+        self.buttonC = customtkinter.CTkButton(self,
+                                               width=100,
+                                               height=50,
+                                               border_width=0,
+                                               corner_radius=8,
+                                               text="C",
+                                               command=self.cleaning_soft)
+        self.buttonC.place(relx=0.3,
+                           rely=0.25,
+                           anchor=tkinter.N)
+        # Button AC
+        self.buttonAC = customtkinter.CTkButton(self,
+                                                width=100,
+                                                height=50,
+                                                border_width=0,
+                                                corner_radius=8,
+                                                text="AC",
+                                                command=self.cleaning_hard)
+        self.buttonAC.place(relx=0.1,
+                            rely=0.25,
+                            anchor=tkinter.N)
+        # Button Backspace
+        # self.buttonBackspace = customtkinter.CTkButton(self,
+        #                                                width=100,
+        #                                                height=50,
+        #                                                border_width=0,
+        #                                                corner_radius=8,
+        #                                                text="Backspace",
+        #                                                command=self.cleaning_backspace)
+        # self.buttonBackspace.place(relx=0.5,
+        #                            rely=0.25,
+        #                            anchor=tkinter.N)
 
     # add methods to app
     def button1_click(self):
@@ -349,11 +398,21 @@ class MainWindow(customtkinter.CTk):
                 recent_number2 = number2
                 command = ""
 
-    def launch_cleaning(self):
+    def cleaning_hard(self):
         global number1
         global number2
         global command
         self.textbox.delete("0.0", "end")
+        number1 = ""
+        number2 = ""
+        command = ""
+
+    def cleaning_soft(self):
+        self.textbox.delete("0.0", "end")
+
+    #def cleaning_backspace(self):
+    #    index = len(self.textbox.get("0.0", "end"))
+    #    self.textbox.delete(f"0.{str(index-2)}", f"0.{index}")
 
 
 answer = float()
@@ -364,5 +423,5 @@ recent_command = ""
 recent_number2 = ""
 button = "button click"
 app = MainWindow()
-app.launch_cleaning()
+app.cleaning_hard()
 app.mainloop()
