@@ -212,16 +212,16 @@ class MainWindow(customtkinter.CTk):
                             rely=0.25,
                             anchor=tkinter.N)
         # Button Backspace
-        # self.buttonBackspace = customtkinter.CTkButton(self,
-        #                                                width=100,
-        #                                                height=50,
-        #                                                border_width=0,
-        #                                                corner_radius=8,
-        #                                                text="Backspace",
-        #                                                command=self.cleaning_backspace)
-        # self.buttonBackspace.place(relx=0.5,
-        #                            rely=0.25,
-        #                            anchor=tkinter.N)
+        self.buttonBackspace = customtkinter.CTkButton(self,
+                                                       width=100,
+                                                       height=50,
+                                                       border_width=0,
+                                                       corner_radius=8,
+                                                       text="Backspace",
+                                                       command=self.cleaning_backspace)
+        self.buttonBackspace.place(relx=0.5,
+                                   rely=0.25,
+                                   anchor=tkinter.N)
 
     # add methods to app
     def button1_click(self):
@@ -410,9 +410,9 @@ class MainWindow(customtkinter.CTk):
     def cleaning_soft(self):
         self.textbox.delete("0.0", "end")
 
-    #def cleaning_backspace(self):
-    #    index = len(self.textbox.get("0.0", "end"))
-    #    self.textbox.delete(f"0.{str(index-2)}", f"0.{index}")
+    def cleaning_backspace(self):
+       index = len(self.textbox.get("0.0", "end"))
+       self.textbox.delete(f"1.{str(index-2)}")
 
 
 answer = float()
