@@ -206,6 +206,7 @@ class MainWindow(customtkinter.CTk):
                                    anchor=tkinter.N)
 
         # Buttons functions
+
     def button1_click(self):
         global number1
         if number1 == "":
@@ -308,32 +309,61 @@ class MainWindow(customtkinter.CTk):
         global number1
         global command
         global pressed_button
-        number1 = self.textbox.get("0.0", "end")
-        command = "+"
-        self.buttonPlus.configure(text_color="red")
-        pressed_button = self.buttonPlus
-        self.textbox.delete("0.0", "end")
+        if pressed_button == "":
+            number1 = self.textbox.get("0.0", "end")
+            pressed_button = self.buttonPlus
+            pressed_button.configure(text_color="red")
+            self.textbox.delete("0.0", "end")
+        else:
+            pressed_button.configure(text_color="white")
+            pressed_button = self.buttonPlus
+            pressed_button.configure(text_color="red")
+            self.textbox.delete("0.0", "end")
 
     def button_minus_click(self):
         global number1
         global command
-        number1 = self.textbox.get("0.0", "end")
-        command = "-"
-        self.textbox.delete("0.0", "end")
+        global pressed_button
+        if pressed_button == "":
+            number1 = self.textbox.get("0.0", "end")
+            pressed_button = self.buttonMinus
+            pressed_button.configure(text_color="red")
+            self.textbox.delete("0.0", "end")
+        else:
+            pressed_button.configure(text_color="white")
+            pressed_button = self.buttonMinus
+            pressed_button.configure(text_color="red")
+            self.textbox.delete("0.0", "end")
 
     def button_div_click(self):
         global number1
         global command
-        number1 = self.textbox.get("0.0", "end")
-        command = "/"
-        self.textbox.delete("0.0", "end")
+        global pressed_button
+        if pressed_button == "":
+            number1 = self.textbox.get("0.0", "end")
+            pressed_button = self.buttonDiv
+            pressed_button.configure(text_color="red")
+            self.textbox.delete("0.0", "end")
+        else:
+            pressed_button.configure(text_color="white")
+            pressed_button = self.buttonDiv
+            pressed_button.configure(text_color="red")
+            self.textbox.delete("0.0", "end")
 
     def button_mult_click(self):
         global number1
         global command
-        number1 = self.textbox.get("0.0", "end")
-        command = "*"
-        self.textbox.delete("0.0", "end")
+        global pressed_button
+        if pressed_button == "":
+            number1 = self.textbox.get("0.0", "end")
+            pressed_button = self.buttonMult
+            pressed_button.configure(text_color="red")
+            self.textbox.delete("0.0", "end")
+        else:
+            pressed_button.configure(text_color="white")
+            pressed_button = self.buttonMult
+            pressed_button.configure(text_color="red")
+            self.textbox.delete("0.0", "end")
 
     def button_equal_click(self):
         global number1
@@ -343,56 +373,79 @@ class MainWindow(customtkinter.CTk):
         global recent_number2
         global answer
         global pressed_button
-        pressed_button.configure(text_color="white")
-        if command == "":
+        if pressed_button == "":
             if recent_command == "":
                 answer = self.textbox.get("0.0", "end")
-            elif recent_command == "+":
+            elif recent_command == self.buttonPlus:
                 answer = float(answer) + float(recent_number2)
-            elif recent_command == "-":
+            elif recent_command == self.buttonMinus:
                 answer = float(answer) - float(recent_number2)
-            elif recent_command == "/":
+            elif recent_command == self.buttonDiv:
                 answer = float(answer) / float(recent_number2)
-            elif recent_command == "*":
+            elif recent_command == self.buttonMult:
                 answer = float(answer) * float(recent_number2)
             self.textbox.delete("0.0", "end")
             if float(answer) % 1 != 0:
                 self.textbox.insert("end", float(answer))
             else:
                 self.textbox.insert("end", int(answer))
-
         else:
+            pressed_button.configure(text_color="white")
             number2 = self.textbox.get("0.0", "end")
-            if command == "+":
-                answer = float(number1) + float(number2)
-            elif command == "-":
-                answer = float(number1) - float(number2)
-            elif command == "/":
-                answer = float(number1) / float(number2)
-            elif command == "*":
-                answer = float(number1) * float(number2)
-            self.textbox.delete("0.0", "end")
-            if float(answer) % 1 != 0:
-                self.textbox.insert("end", float(answer))
-                number1 = ""
-                recent_command = command
-                recent_number2 = number2
-                command = ""
+            if number2 != r"\s{*}":
+                number1 = float(number1)
+                number2 = float(number2)
+                if pressed_button == self.buttonPlus:
+                    answer = float(number1) + float(number2)
+                elif pressed_button == self.buttonMinus:
+                    answer = float(number1) - float(number2)
+                elif pressed_button == self.buttonDiv:
+                    answer = float(number1) / float(number2)
+                elif pressed_button == self.buttonMult:
+                    answer = float(number1) * float(number2)
+                self.textbox.delete("0.0", "end")
+                if float(answer) % 1 != 0:
+                    self.textbox.insert("end", float(answer))
+                    recent_command = pressed_button
+                    recent_number2 = number2
+                    number1 = ""
+                    number2 = ""
+                    pressed_button = ""
+                else:
+                    self.textbox.insert("end", int(answer))
+                    recent_command = pressed_button
+                    recent_number2 = number2
+                    number1 = ""
+                    number2 = ""
+                    pressed_button = ""
             else:
-                self.textbox.insert("end", int(answer))
-                number1 = ""
-                recent_command = command
-                recent_number2 = number2
-                command = ""
+                if float(number1) % 1 != 0:
+                    self.textbox.insert("end", float(number1))
+                    recent_command = pressed_button
+                    recent_number2 = number2
+                    number1 = ""
+                    number2 = ""
+                    pressed_button = ""
+                else:
+                    self.textbox.insert("end", int(number1))
+                    recent_command = pressed_button
+                    recent_number2 = number2
+                    number1 = ""
+                    number2 = ""
+                    pressed_button = ""
 
     def cleaning_hard(self):
         global number1
         global number2
-        global command
+        global pressed_button
+        global recent_number2
+        global recent_command
         self.textbox.delete("0.0", "end")
         number1 = ""
         number2 = ""
-        command = ""
+        pressed_button = ""
+        recent_command = ""
+        recent_number2 = ""
 
     def cleaning_soft(self):
         self.textbox.delete("0.0", "end")
@@ -406,10 +459,10 @@ answer = float()
 number1 = ""
 number2 = ""
 command = ""
-recent_command = ""
+recent_command = str()
 recent_number2 = ""
 button = "button click"
-pressed_button = MainWindow()
+pressed_button = str()
 app = MainWindow()
 app.cleaning_hard()
 app.mainloop()
