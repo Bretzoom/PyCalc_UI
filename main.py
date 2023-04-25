@@ -400,24 +400,29 @@ class MainWindow(customtkinter.CTk):
                 elif pressed_button == self.buttonMinus:
                     answer = float(number1) - float(number2)
                 elif pressed_button == self.buttonDiv:
-                    answer = float(number1) / float(number2)
+                    if number2 != 0:
+                        answer = float(number1) / float(number2)
                 elif pressed_button == self.buttonMult:
                     answer = float(number1) * float(number2)
                 self.textbox.delete("0.0", "end")
-                if float(answer) % 1 != 0:
-                    self.textbox.insert("end", float(answer))
-                    recent_command = pressed_button
-                    recent_number2 = number2
-                    number1 = ""
-                    number2 = ""
-                    pressed_button = ""
+                if number2 == 0 and pressed_button == self.buttonDiv:
+                    self.textbox.insert("end", "Division by zero")
+                    self.cleaning_dbz()
                 else:
-                    self.textbox.insert("end", int(answer))
-                    recent_command = pressed_button
-                    recent_number2 = number2
-                    number1 = ""
-                    number2 = ""
-                    pressed_button = ""
+                    if float(answer) % 1 != 0:
+                        self.textbox.insert("end", float(answer))
+                        recent_command = pressed_button
+                        recent_number2 = number2
+                        number1 = ""
+                        number2 = ""
+                        pressed_button = ""
+                    else:
+                        self.textbox.insert("end", int(answer))
+                        recent_command = pressed_button
+                        recent_number2 = number2
+                        number1 = ""
+                        number2 = ""
+                        pressed_button = ""
             else:
                 if float(number1) % 1 != 0:
                     self.textbox.insert("end", float(number1))
@@ -433,6 +438,18 @@ class MainWindow(customtkinter.CTk):
                     number1 = ""
                     number2 = ""
                     pressed_button = ""
+
+    def cleaning_dbz(self):
+        global number1
+        global number2
+        global pressed_button
+        global recent_number2
+        global recent_command
+        number1 = ""
+        number2 = ""
+        pressed_button = ""
+        recent_command = ""
+        recent_number2 = ""
 
     def cleaning_hard(self):
         global number1
