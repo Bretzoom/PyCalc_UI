@@ -46,8 +46,8 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="1",
-                                     font=("Comic Sans MS", 32),
+                                     text="",
+                                     image=self.image_1,
                                      command=self.button1_click)
         self.button1.place(relx=0.1,
                            rely=0.7,
