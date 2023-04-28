@@ -1,206 +1,270 @@
 # Imports
 import tkinter
-import customtkinter
+import customtkinter as ctk
+from PIL import Image, ImageTk
 
 
-class MainWindow(customtkinter.CTk):
+class MainWindow(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.geometry("600x500")
         self.title("PyCalc_UI")
 
         # Textbox
-        self.textbox = customtkinter.CTkTextbox(master=self, width=600, height=100, corner_radius=0)
+        self.textbox = ctk.CTkTextbox(master=self, width=600, height=100, corner_radius=0, font=("Comic Sans MS", 32))
         self.textbox.grid(row=0, column=0, sticky="nsew")
 
+        # Button images
+        self.image_1 = ctk.CTkImage(Image.open('resourses/button_1.png'), size=(30, 30))
+        self.image_2 = ctk.CTkImage(Image.open('resourses/button_2.png'), size=(30, 30))
+        self.image_3 = ctk.CTkImage(Image.open('resourses/button_3.png'), size=(30, 30))
+        self.image_4 = ctk.CTkImage(Image.open('resourses/button_4.png'), size=(30, 30))
+        self.image_5 = ctk.CTkImage(Image.open('resourses/button_5.png'), size=(30, 30))
+        self.image_6 = ctk.CTkImage(Image.open('resourses/button_6.png'), size=(30, 30))
+        self.image_7 = ctk.CTkImage(Image.open('resourses/button_7.png'), size=(30, 30))
+        self.image_8 = ctk.CTkImage(Image.open('resourses/button_8.png'), size=(30, 30))
+        self.image_9 = ctk.CTkImage(Image.open('resourses/button_9.png'), size=(30, 30))
+        self.image_0 = ctk.CTkImage(Image.open('resourses/button_0.png'), size=(30, 30))
+        self.image_Plus = ctk.CTkImage(Image.open('resourses/button_Plus.png'), size=(30, 30))
+        self.image_Plus_pressed = ctk.CTkImage(Image.open('resourses/button_Plus_pressed.png'), size=(30, 30))
+        self.image_Minus = ctk.CTkImage(Image.open('resourses/button_Minus.png'), size=(30, 30))
+        self.image_Minus_pressed = ctk.CTkImage(Image.open('resourses/button_Minus_pressed.png'), size=(30, 30))
+        self.image_Div = ctk.CTkImage(Image.open('resourses/button_Div.png'), size=(30, 30))
+        self.image_Div_pressed = ctk.CTkImage(Image.open('resourses/button_Div_pressed.png'), size=(30, 30))
+        self.image_Mult = ctk.CTkImage(Image.open('resourses/button_Mult.png'), size=(30, 30))
+        self.image_Mult_pressed = ctk.CTkImage(Image.open('resourses/button_Mult_pressed.png'), size=(30, 30))
+        self.image_Point = ctk.CTkImage(Image.open('resourses/button_Point.png'), size=(30, 30))
+        self.image_Backspace = ctk.CTkImage(Image.open('resourses/button_Backspace.png'), size=(30, 30))
+        self.image_Equal = ctk.CTkImage(Image.open('resourses/button_Equal.png'), size=(30, 30))
+        self.image_C = ctk.CTkImage(Image.open('resourses/button_C.png'), size=(30, 30))
+        self.image_AC = ctk.CTkImage(Image.open('resourses/button_AC.png'), size=(35, 35))
+
         # Buttons set and place
-        self.button1 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="1",
-                                               command=self.button1_click)
+        self.button1 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="1",
+                                     font=("Comic Sans MS", 32),
+                                     command=self.button1_click)
         self.button1.place(relx=0.1,
                            rely=0.7,
                            anchor=tkinter.N)
-        self.button2 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="2",
-                                               command=self.button2_click)
+        self.button2 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_2,
+                                     command=self.button2_click)
         self.button2.place(relx=0.3,
                            rely=0.7,
                            anchor=tkinter.N)
-        self.button3 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="3",
-                                               command=self.button3_click)
+        self.button3 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_3,
+                                     command=self.button3_click)
         self.button3.place(relx=0.5,
                            rely=0.7,
                            anchor=tkinter.N)
-        self.button4 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="4",
-                                               command=self.button4_click)
+        self.button4 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_4,
+                                     command=self.button4_click)
         self.button4.place(relx=0.1,
                            rely=0.55,
                            anchor=tkinter.N)
-        self.button5 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="5",
-                                               command=self.button5_click)
+        self.button5 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_5,
+                                     command=self.button5_click)
         self.button5.place(relx=0.3,
                            rely=0.55,
                            anchor=tkinter.N)
-        self.button6 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="6",
-                                               command=self.button6_click)
+        self.button6 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_6,
+                                     command=self.button6_click)
         self.button6.place(relx=0.5,
                            rely=0.55,
                            anchor=tkinter.N)
-        self.button7 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="7",
-                                               command=self.button7_click)
+        self.button7 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_7,
+                                     command=self.button7_click)
         self.button7.place(relx=0.1,
                            rely=0.4,
                            anchor=tkinter.N)
-        self.button8 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="8",
-                                               command=self.button8_click)
+        self.button8 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_8,
+                                     command=self.button8_click)
         self.button8.place(relx=0.3,
                            rely=0.4,
                            anchor=tkinter.N)
-        self.button9 = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="9",
-                                               command=self.button9_click)
+        self.button9 = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_9,
+                                     command=self.button9_click)
         self.button9.place(relx=0.5,
                            rely=0.4,
                            anchor=tkinter.N)
-        self.button0 = customtkinter.CTkButton(self,
-                                               width=220,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="0",
-                                               command=self.button0_click)
+        self.button0 = ctk.CTkButton(self,
+                                     width=220,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_0,
+                                     command=self.button0_click)
         self.button0.place(relx=0.2,
                            rely=0.9,
                            anchor=tkinter.CENTER)
-        self.buttonPlus = customtkinter.CTkButton(self,
-                                                  width=100,
-                                                  height=50,
-                                                  border_width=0,
-                                                  corner_radius=8,
-                                                  text="+",
-                                                  command=self.button_plus_click)
+        self.buttonPlus = ctk.CTkButton(self,
+                                        width=100,
+                                        height=50,
+                                        border_width=0,
+                                        corner_radius=8,
+                                        fg_color="#87A3DB",
+                                        text="",
+                                        image=self.image_Plus,
+                                        command=self.button_plus_click)
         self.buttonPlus.place(relx=0.7,
                               rely=0.7,
                               anchor=tkinter.N)
-        self.buttonMinus = customtkinter.CTkButton(self,
-                                                   width=100,
-                                                   height=50,
-                                                   border_width=0,
-                                                   corner_radius=8,
-                                                   text="-",
-                                                   command=self.button_minus_click)
+        self.buttonMinus = ctk.CTkButton(self,
+                                         width=100,
+                                         height=50,
+                                         border_width=0,
+                                         corner_radius=8,
+                                         fg_color="#87A3DB",
+                                         text="",
+                                         image=self.image_Minus,
+                                         command=self.button_minus_click)
         self.buttonMinus.place(relx=0.7,
                                rely=0.55,
                                anchor=tkinter.N)
-        self.buttonDiv = customtkinter.CTkButton(self,
-                                                 width=100,
-                                                 height=50,
-                                                 border_width=0,
-                                                 corner_radius=8,
-                                                 text="/",
-                                                 command=self.button_div_click)
+        self.buttonDiv = ctk.CTkButton(self,
+                                       width=100,
+                                       height=50,
+                                       border_width=0,
+                                       corner_radius=8,
+                                       fg_color="#87A3DB",
+                                       text="",
+                                       image=self.image_Div,
+                                       command=self.button_div_click)
         self.buttonDiv.place(relx=0.7,
                              rely=0.25,
                              anchor=tkinter.N)
-        self.buttonMult = customtkinter.CTkButton(self,
-                                                  width=100,
-                                                  height=50,
-                                                  border_width=0,
-                                                  corner_radius=8,
-                                                  text="X",
-                                                  command=self.button_mult_click)
+        self.buttonMult = ctk.CTkButton(self,
+                                        width=100,
+                                        height=50,
+                                        border_width=0,
+                                        corner_radius=8,
+                                        fg_color="#87A3DB",
+                                        text="",
+                                        image=self.image_Mult,
+                                        command=self.button_mult_click)
         self.buttonMult.place(relx=0.7,
                               rely=0.4,
                               anchor=tkinter.N)
-        self.buttonEqual = customtkinter.CTkButton(self,
-                                                   width=100,
-                                                   height=50,
-                                                   border_width=0,
-                                                   corner_radius=8,
-                                                   text="=",
-                                                   command=self.button_equal_click)
+        self.buttonEqual = ctk.CTkButton(self,
+                                         width=100,
+                                         height=50,
+                                         border_width=0,
+                                         corner_radius=8,
+                                         fg_color="#87A3DB",
+                                         text="",
+                                         image=self.image_Equal,
+                                         command=self.button_equal_click)
         self.buttonEqual.place(relx=0.7,
                                rely=0.9,
                                anchor=tkinter.CENTER)
-        self.buttonPoint = customtkinter.CTkButton(self,
-                                                   width=100,
-                                                   height=50,
-                                                   border_width=0,
-                                                   corner_radius=8,
-                                                   text=".",
-                                                   command=self.button_point_click)
+        self.buttonPoint = ctk.CTkButton(self,
+                                         width=100,
+                                         height=50,
+                                         border_width=0,
+                                         corner_radius=8,
+                                         fg_color="#87A3DB",
+                                         text="",
+                                         image=self.image_Point,
+                                         command=self.button_point_click)
         self.buttonPoint.place(relx=0.5,
                                rely=0.9,
                                anchor=tkinter.CENTER)
-        self.buttonC = customtkinter.CTkButton(self,
-                                               width=100,
-                                               height=50,
-                                               border_width=0,
-                                               corner_radius=8,
-                                               text="C",
-                                               command=self.cleaning_soft)
+        self.buttonC = ctk.CTkButton(self,
+                                     width=100,
+                                     height=50,
+                                     border_width=0,
+                                     corner_radius=8,
+                                     fg_color="#87A3DB",
+                                     text="",
+                                     image=self.image_C,
+                                     command=self.cleaning_soft)
         self.buttonC.place(relx=0.3,
                            rely=0.25,
                            anchor=tkinter.N)
-        self.buttonAC = customtkinter.CTkButton(self,
-                                                width=100,
-                                                height=50,
-                                                border_width=0,
-                                                corner_radius=8,
-                                                text="AC",
-                                                command=self.cleaning_hard)
+        self.buttonAC = ctk.CTkButton(self,
+                                      width=100,
+                                      height=50,
+                                      border_width=0,
+                                      corner_radius=8,
+                                      fg_color="#87A3DB",
+                                      text="",
+                                      image=self.image_AC,
+                                      command=self.cleaning_hard)
         self.buttonAC.place(relx=0.1,
                             rely=0.25,
                             anchor=tkinter.N)
-        self.buttonBackspace = customtkinter.CTkButton(self,
-                                                       width=100,
-                                                       height=50,
-                                                       border_width=0,
-                                                       corner_radius=8,
-                                                       text="Backspace",
-                                                       command=self.cleaning_backspace)
+        self.buttonBackspace = ctk.CTkButton(self,
+                                             width=100,
+                                             height=50,
+                                             border_width=0,
+                                             corner_radius=8,
+                                             fg_color="#87A3DB",
+                                             text="",
+                                             image=self.image_Backspace,
+                                             command=self.cleaning_backspace)
         self.buttonBackspace.place(relx=0.5,
                                    rely=0.25,
                                    anchor=tkinter.N)
@@ -299,7 +363,9 @@ class MainWindow(customtkinter.CTk):
 
     def button_point_click(self):
         global number1
+        global answer
         if number1 == "":
+            self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "0.")
             number1 = self.textbox.get("0.0", "end")
         else:
@@ -309,60 +375,104 @@ class MainWindow(customtkinter.CTk):
         global number1
         global command
         global pressed_button
+        global pressed_button_image
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonPlus
-            pressed_button.configure(text_color="red")
+            pressed_button.configure(image=self.image_Plus_pressed,
+                                     fg_color="#aabbdc",
+                                     border_width=2,
+                                     border_color="#87A3DB")
+            pressed_button_image = self.image_Plus
             self.textbox.delete("0.0", "end")
         else:
-            pressed_button.configure(text_color="white")
+            pressed_button.configure(image=pressed_button_image,
+                                     fg_color="#87A3DB",
+                                     border_width=0)
             pressed_button = self.buttonPlus
-            pressed_button.configure(text_color="red")
+            pressed_button.configure(image=self.image_Plus_pressed,
+                                     fg_color="#aabbdc",
+                                     border_width=2,
+                                     border_color="#87A3DB")
+            pressed_button_image = self.image_Plus
             self.textbox.delete("0.0", "end")
 
     def button_minus_click(self):
         global number1
         global command
         global pressed_button
+        global pressed_button_image
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonMinus
-            pressed_button.configure(text_color="red")
+            pressed_button.configure(image=self.image_Minus_pressed,
+                                     fg_color="#aabbdc",
+                                     border_width=2,
+                                     border_color="#87A3DB")
+            pressed_button_image = self.image_Minus
             self.textbox.delete("0.0", "end")
         else:
-            pressed_button.configure(text_color="white")
+            pressed_button.configure(image=pressed_button_image,
+                                     fg_color="#87A3DB",
+                                     border_width=0)
             pressed_button = self.buttonMinus
-            pressed_button.configure(text_color="red")
+            pressed_button.configure(image=self.image_Minus_pressed,
+                                     fg_color="#aabbdc",
+                                     border_width=2,
+                                     border_color="#87A3DB")
+            pressed_button_image = self.image_Minus
             self.textbox.delete("0.0", "end")
 
     def button_div_click(self):
         global number1
         global command
         global pressed_button
+        global pressed_button_image
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonDiv
-            pressed_button.configure(text_color="red")
+            pressed_button.configure(image=self.image_Div_pressed,
+                                     fg_color="#aabbdc",
+                                     border_width=2,
+                                     border_color="#87A3DB")
+            pressed_button_image = self.image_Div
             self.textbox.delete("0.0", "end")
         else:
-            pressed_button.configure(text_color="white")
+            pressed_button.configure(image=pressed_button_image,
+                                     fg_color="#87A3DB",
+                                     border_width=0)
             pressed_button = self.buttonDiv
-            pressed_button.configure(text_color="red")
+            pressed_button.configure(image=self.image_Div_pressed,
+                                     fg_color="#aabbdc",
+                                     border_width=2,
+                                     border_color="#87A3DB")
+            pressed_button_image = self.image_Div
             self.textbox.delete("0.0", "end")
 
     def button_mult_click(self):
         global number1
         global command
         global pressed_button
+        global pressed_button_image
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonMult
-            pressed_button.configure(text_color="red")
+            pressed_button.configure(image=self.image_Mult_pressed,
+                                     fg_color="#aabbdc",
+                                     border_width=2,
+                                     border_color="#87A3DB")
+            pressed_button_image = self.image_Mult
             self.textbox.delete("0.0", "end")
         else:
-            pressed_button.configure(text_color="white")
+            pressed_button.configure(image=pressed_button_image,
+                                     fg_color="#87A3DB",
+                                     border_width=0)
             pressed_button = self.buttonMult
-            pressed_button.configure(text_color="red")
+            pressed_button.configure(image=self.image_Mult_pressed,
+                                     fg_color="#aabbdc",
+                                     border_width=2,
+                                     border_color="#87A3DB")
+            pressed_button_image = self.image_Mult
             self.textbox.delete("0.0", "end")
 
     def button_equal_click(self):
@@ -390,7 +500,9 @@ class MainWindow(customtkinter.CTk):
             else:
                 self.textbox.insert("end", int(answer))
         else:
-            pressed_button.configure(text_color="white")
+            pressed_button.configure(image=pressed_button_image,
+                                     fg_color="#87A3DB",
+                                     border_width=0)
             number2 = self.textbox.get("0.0", "end")
             if number2 != r"\s{*}":
                 number1 = float(number1)
@@ -473,13 +585,13 @@ class MainWindow(customtkinter.CTk):
 
 
 answer = float()
-number1 = ""
-number2 = ""
-command = ""
+number1 = str()
+number2 = str()
+command = str()
 recent_command = str()
-recent_number2 = ""
-button = "button click"
+recent_number2 = str()
 pressed_button = str()
+pressed_button_image = str()
 app = MainWindow()
 app.cleaning_hard()
 app.mainloop()
