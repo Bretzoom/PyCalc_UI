@@ -10,7 +10,8 @@ class MainWindow(ctk.CTk):
         self.title("PyCalc_UI")
 
         # Textbox
-        self.textbox = ctk.CTkTextbox(master=self, width=600, height=100, corner_radius=0, font=("Comic Sans MS", 32))
+        self.textbox = ctk.CTkTextbox(master=self, width=600, height=100, corner_radius=0, font=("Comic Sans MS", 32),
+                                      state="disabled")
         self.textbox.grid(row=0, column=0, sticky="nsew")
 
         # Buttons appearance
@@ -287,109 +288,135 @@ class MainWindow(ctk.CTk):
 
     def button1_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "1")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "1")
+        self.textbox.configure(state="disabled")
 
     def button2_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "2")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "2")
+        self.textbox.configure(state="disabled")
 
     def button3_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "3")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "3")
+        self.textbox.configure(state="disabled")
 
     def button4_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "4")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "4")
+        self.textbox.configure(state="disabled")
 
     def button5_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "5")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "5")
+        self.textbox.configure(state="disabled")
 
     def button6_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "6")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "6")
+        self.textbox.configure(state="disabled")
 
     def button7_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "7")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "7")
+        self.textbox.configure(state="disabled")
+
 
     def button8_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "8")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "8")
+        self.textbox.configure(state="disabled")
+
 
     def button9_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "9")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "9")
+        self.textbox.configure(state="disabled")
+
 
     def button0_click(self):
         global number1
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "0")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", "0")
+        self.textbox.configure(state="disabled")
+
 
     def button_point_click(self):
         global number1
         global answer
+        self.textbox.configure(state="normal")
         if number1 == "":
             self.textbox.delete("0.0", "end")
             self.textbox.insert("end", "0.")
             number1 = self.textbox.get("0.0", "end")
         else:
             self.textbox.insert("end", ".")
+        self.textbox.configure(state="disabled")
 
     def button_plus_click(self):
         global number1
         global command
         global pressed_button
-        global pressed_button_image
+        self.textbox.configure(state="normal")
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonPlus
@@ -405,12 +432,13 @@ class MainWindow(ctk.CTk):
                                      border_width=2,
                                      border_color="#87A3DB")
             self.textbox.delete("0.0", "end")
+        self.textbox.configure(state="disabled")
 
     def button_minus_click(self):
         global number1
         global command
         global pressed_button
-        global pressed_button_image
+        self.textbox.configure(state="normal")
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonMinus
@@ -419,20 +447,20 @@ class MainWindow(ctk.CTk):
                                      border_color="#87A3DB")
             self.textbox.delete("0.0", "end")
         else:
-            pressed_button.configure(image=pressed_button_image,
-                                     fg_color="#87A3DB",
+            pressed_button.configure(fg_color="#87A3DB",
                                      border_width=0)
             pressed_button = self.buttonMinus
             pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
             self.textbox.delete("0.0", "end")
+        self.textbox.configure(state="disabled")
 
     def button_div_click(self):
         global number1
         global command
         global pressed_button
-        global pressed_button_image
+        self.textbox.configure(state="normal")
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonDiv
@@ -441,20 +469,20 @@ class MainWindow(ctk.CTk):
                                      border_color="#87A3DB")
             self.textbox.delete("0.0", "end")
         else:
-            pressed_button.configure(image=pressed_button_image,
-                                     fg_color="#87A3DB",
+            pressed_button.configure(fg_color="#87A3DB",
                                      border_width=0)
             pressed_button = self.buttonDiv
             pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
             self.textbox.delete("0.0", "end")
+        self.textbox.configure(state="disabled")
 
     def button_mult_click(self):
         global number1
         global command
         global pressed_button
-        global pressed_button_image
+        self.textbox.configure(state="normal")
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonMult
@@ -463,14 +491,14 @@ class MainWindow(ctk.CTk):
                                      border_color="#87A3DB")
             self.textbox.delete("0.0", "end")
         else:
-            pressed_button.configure(image=pressed_button_image,
-                                     fg_color="#87A3DB",
+            pressed_button.configure(fg_color="#87A3DB",
                                      border_width=0)
             pressed_button = self.buttonMult
             pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
             self.textbox.delete("0.0", "end")
+        self.textbox.configure(state="disabled")
 
     def button_equal_click(self):
         global number1
@@ -480,6 +508,7 @@ class MainWindow(ctk.CTk):
         global recent_number2
         global answer
         global pressed_button
+        self.textbox.configure(state="normal")
         if pressed_button == "":
             if recent_command == "":
                 answer = self.textbox.get("0.0", "end")
@@ -546,7 +575,7 @@ class MainWindow(ctk.CTk):
                     number1 = ""
                     number2 = ""
                     pressed_button = ""
-
+        self.textbox.configure(state="disabled")
     def pressed(self, pressed_button):
         pass
 
@@ -559,11 +588,13 @@ class MainWindow(ctk.CTk):
         global pressed_button
         global recent_number2
         global recent_command
+        self.textbox.configure(state="normal")
         number1 = ""
         number2 = ""
         pressed_button = ""
         recent_command = ""
         recent_number2 = ""
+        self.textbox.configure(state="disabled")
 
     def cleaning_hard(self):
         global number1
@@ -571,19 +602,25 @@ class MainWindow(ctk.CTk):
         global pressed_button
         global recent_number2
         global recent_command
+        self.textbox.configure(state="normal")
         self.textbox.delete("0.0", "end")
         number1 = ""
         number2 = ""
         pressed_button = ""
         recent_command = ""
         recent_number2 = ""
+        self.textbox.configure(state="disabled")
 
     def cleaning_soft(self):
+        self.textbox.configure(state="normal")
         self.textbox.delete("0.0", "end")
+        self.textbox.configure(state="disabled")
 
     def cleaning_backspace(self):
+        self.textbox.configure(state="normal")
         index = len(self.textbox.get("0.0", "end"))
         self.textbox.delete(f"1.{str(index - 2)}")
+        self.textbox.configure(state="disabled")
 
 
 answer = float()
