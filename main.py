@@ -14,30 +14,7 @@ class MainWindow(ctk.CTk):
         self.textbox = ctk.CTkTextbox(master=self, width=600, height=100, corner_radius=0, font=("Comic Sans MS", 32))
         self.textbox.grid(row=0, column=0, sticky="nsew")
 
-        # Button images
-        self.image_1 = ctk.CTkImage(Image.open('resourses/button_1.png'), size=(30, 30))
-        self.image_2 = ctk.CTkImage(Image.open('resourses/button_2.png'), size=(30, 30))
-        self.image_3 = ctk.CTkImage(Image.open('resourses/button_3.png'), size=(30, 30))
-        self.image_4 = ctk.CTkImage(Image.open('resourses/button_4.png'), size=(30, 30))
-        self.image_5 = ctk.CTkImage(Image.open('resourses/button_5.png'), size=(30, 30))
-        self.image_6 = ctk.CTkImage(Image.open('resourses/button_6.png'), size=(30, 30))
-        self.image_7 = ctk.CTkImage(Image.open('resourses/button_7.png'), size=(30, 30))
-        self.image_8 = ctk.CTkImage(Image.open('resourses/button_8.png'), size=(30, 30))
-        self.image_9 = ctk.CTkImage(Image.open('resourses/button_9.png'), size=(30, 30))
-        self.image_0 = ctk.CTkImage(Image.open('resourses/button_0.png'), size=(30, 30))
-        self.image_Plus = ctk.CTkImage(Image.open('resourses/button_Plus.png'), size=(30, 30))
-        self.image_Plus_pressed = ctk.CTkImage(Image.open('resourses/button_Plus_pressed.png'), size=(30, 30))
-        self.image_Minus = ctk.CTkImage(Image.open('resourses/button_Minus.png'), size=(30, 30))
-        self.image_Minus_pressed = ctk.CTkImage(Image.open('resourses/button_Minus_pressed.png'), size=(30, 30))
-        self.image_Div = ctk.CTkImage(Image.open('resourses/button_Div.png'), size=(30, 30))
-        self.image_Div_pressed = ctk.CTkImage(Image.open('resourses/button_Div_pressed.png'), size=(30, 30))
-        self.image_Mult = ctk.CTkImage(Image.open('resourses/button_Mult.png'), size=(30, 30))
-        self.image_Mult_pressed = ctk.CTkImage(Image.open('resourses/button_Mult_pressed.png'), size=(30, 30))
-        self.image_Point = ctk.CTkImage(Image.open('resourses/button_Point.png'), size=(30, 30))
-        self.image_Backspace = ctk.CTkImage(Image.open('resourses/button_Backspace.png'), size=(30, 30))
-        self.image_Equal = ctk.CTkImage(Image.open('resourses/button_Equal.png'), size=(30, 30))
-        self.image_C = ctk.CTkImage(Image.open('resourses/button_C.png'), size=(30, 30))
-        self.image_AC = ctk.CTkImage(Image.open('resourses/button_AC.png'), size=(35, 35))
+        # Buttons appearance
 
         # Buttons set and place
         self.button1 = ctk.CTkButton(self,
@@ -46,8 +23,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_1,
+                                     text="1",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button1_click)
         self.button1.place(relx=0.1,
                            rely=0.7,
@@ -58,8 +37,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_2,
+                                     text="2",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button2_click)
         self.button2.place(relx=0.3,
                            rely=0.7,
@@ -70,8 +51,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_3,
+                                     text="3",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button3_click)
         self.button3.place(relx=0.5,
                            rely=0.7,
@@ -82,8 +65,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_4,
+                                     text="4",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button4_click)
         self.button4.place(relx=0.1,
                            rely=0.55,
@@ -94,8 +79,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_5,
+                                     text="5",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button5_click)
         self.button5.place(relx=0.3,
                            rely=0.55,
@@ -106,8 +93,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_6,
+                                     text="6",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button6_click)
         self.button6.place(relx=0.5,
                            rely=0.55,
@@ -118,8 +107,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_7,
+                                     text="7",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button7_click)
         self.button7.place(relx=0.1,
                            rely=0.4,
@@ -130,8 +121,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_8,
+                                     text="8",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button8_click)
         self.button8.place(relx=0.3,
                            rely=0.4,
@@ -142,8 +135,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_9,
+                                     text="9",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button9_click)
         self.button9.place(relx=0.5,
                            rely=0.4,
@@ -154,8 +149,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_0,
+                                     text="0",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.button0_click)
         self.button0.place(relx=0.2,
                            rely=0.9,
@@ -166,8 +163,10 @@ class MainWindow(ctk.CTk):
                                         border_width=0,
                                         corner_radius=8,
                                         fg_color="#87A3DB",
-                                        text="",
-                                        image=self.image_Plus,
+                                        text="+",
+                                        text_color="white",
+                                        anchor="E",
+                                        font=("Comic Sans MS", 32),
                                         command=self.button_plus_click)
         self.buttonPlus.place(relx=0.7,
                               rely=0.7,
@@ -178,8 +177,10 @@ class MainWindow(ctk.CTk):
                                          border_width=0,
                                          corner_radius=8,
                                          fg_color="#87A3DB",
-                                         text="",
-                                         image=self.image_Minus,
+                                         text="-",
+                                         text_color="white",
+                                         anchor="E",
+                                         font=("Comic Sans MS", 32),
                                          command=self.button_minus_click)
         self.buttonMinus.place(relx=0.7,
                                rely=0.55,
@@ -190,8 +191,10 @@ class MainWindow(ctk.CTk):
                                        border_width=0,
                                        corner_radius=8,
                                        fg_color="#87A3DB",
-                                       text="",
-                                       image=self.image_Div,
+                                       text="÷",
+                                       text_color="white",
+                                       anchor="E",
+                                       font=("Comic Sans MS", 32),
                                        command=self.button_div_click)
         self.buttonDiv.place(relx=0.7,
                              rely=0.25,
@@ -202,8 +205,10 @@ class MainWindow(ctk.CTk):
                                         border_width=0,
                                         corner_radius=8,
                                         fg_color="#87A3DB",
-                                        text="",
-                                        image=self.image_Mult,
+                                        text="×",
+                                        text_color="white",
+                                        anchor="E",
+                                        font=("Comic Sans MS", 32),
                                         command=self.button_mult_click)
         self.buttonMult.place(relx=0.7,
                               rely=0.4,
@@ -214,8 +219,10 @@ class MainWindow(ctk.CTk):
                                          border_width=0,
                                          corner_radius=8,
                                          fg_color="#87A3DB",
-                                         text="",
-                                         image=self.image_Equal,
+                                         text="=",
+                                         text_color="white",
+                                         anchor="E",
+                                         font=("Comic Sans MS", 32),
                                          command=self.button_equal_click)
         self.buttonEqual.place(relx=0.7,
                                rely=0.9,
@@ -226,8 +233,10 @@ class MainWindow(ctk.CTk):
                                          border_width=0,
                                          corner_radius=8,
                                          fg_color="#87A3DB",
-                                         text="",
-                                         image=self.image_Point,
+                                         text=".",
+                                         text_color="white",
+                                         anchor="E",
+                                         font=("Comic Sans MS", 32),
                                          command=self.button_point_click)
         self.buttonPoint.place(relx=0.5,
                                rely=0.9,
@@ -238,8 +247,10 @@ class MainWindow(ctk.CTk):
                                      border_width=0,
                                      corner_radius=8,
                                      fg_color="#87A3DB",
-                                     text="",
-                                     image=self.image_C,
+                                     text="C",
+                                     text_color="white",
+                                     anchor="E",
+                                     font=("Comic Sans MS", 32),
                                      command=self.cleaning_soft)
         self.buttonC.place(relx=0.3,
                            rely=0.25,
@@ -250,8 +261,10 @@ class MainWindow(ctk.CTk):
                                       border_width=0,
                                       corner_radius=8,
                                       fg_color="#87A3DB",
-                                      text="",
-                                      image=self.image_AC,
+                                      text="AC",
+                                      text_color="white",
+                                      anchor="E",
+                                      font=("Comic Sans MS", 32),
                                       command=self.cleaning_hard)
         self.buttonAC.place(relx=0.1,
                             rely=0.25,
@@ -262,8 +275,10 @@ class MainWindow(ctk.CTk):
                                              border_width=0,
                                              corner_radius=8,
                                              fg_color="#87A3DB",
-                                             text="",
-                                             image=self.image_Backspace,
+                                             text="←",
+                                             text_color="white",
+                                             anchor="N",
+                                             font=("Comic Sans MS", 32),
                                              command=self.cleaning_backspace)
         self.buttonBackspace.place(relx=0.5,
                                    rely=0.25,
@@ -379,22 +394,17 @@ class MainWindow(ctk.CTk):
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonPlus
-            pressed_button.configure(image=self.image_Plus_pressed,
-                                     fg_color="#aabbdc",
+            pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
-            pressed_button_image = self.image_Plus
             self.textbox.delete("0.0", "end")
         else:
-            pressed_button.configure(image=pressed_button_image,
-                                     fg_color="#87A3DB",
+            pressed_button.configure(fg_color="#87A3DB",
                                      border_width=0)
             pressed_button = self.buttonPlus
-            pressed_button.configure(image=self.image_Plus_pressed,
-                                     fg_color="#aabbdc",
+            pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
-            pressed_button_image = self.image_Plus
             self.textbox.delete("0.0", "end")
 
     def button_minus_click(self):
@@ -405,22 +415,18 @@ class MainWindow(ctk.CTk):
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonMinus
-            pressed_button.configure(image=self.image_Minus_pressed,
-                                     fg_color="#aabbdc",
+            pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
-            pressed_button_image = self.image_Minus
             self.textbox.delete("0.0", "end")
         else:
             pressed_button.configure(image=pressed_button_image,
                                      fg_color="#87A3DB",
                                      border_width=0)
             pressed_button = self.buttonMinus
-            pressed_button.configure(image=self.image_Minus_pressed,
-                                     fg_color="#aabbdc",
+            pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
-            pressed_button_image = self.image_Minus
             self.textbox.delete("0.0", "end")
 
     def button_div_click(self):
@@ -431,22 +437,18 @@ class MainWindow(ctk.CTk):
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonDiv
-            pressed_button.configure(image=self.image_Div_pressed,
-                                     fg_color="#aabbdc",
+            pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
-            pressed_button_image = self.image_Div
             self.textbox.delete("0.0", "end")
         else:
             pressed_button.configure(image=pressed_button_image,
                                      fg_color="#87A3DB",
                                      border_width=0)
             pressed_button = self.buttonDiv
-            pressed_button.configure(image=self.image_Div_pressed,
-                                     fg_color="#aabbdc",
+            pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
-            pressed_button_image = self.image_Div
             self.textbox.delete("0.0", "end")
 
     def button_mult_click(self):
@@ -457,22 +459,18 @@ class MainWindow(ctk.CTk):
         if pressed_button == "":
             number1 = self.textbox.get("0.0", "end")
             pressed_button = self.buttonMult
-            pressed_button.configure(image=self.image_Mult_pressed,
-                                     fg_color="#aabbdc",
+            pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
-            pressed_button_image = self.image_Mult
             self.textbox.delete("0.0", "end")
         else:
             pressed_button.configure(image=pressed_button_image,
                                      fg_color="#87A3DB",
                                      border_width=0)
             pressed_button = self.buttonMult
-            pressed_button.configure(image=self.image_Mult_pressed,
-                                     fg_color="#aabbdc",
+            pressed_button.configure(fg_color="#aabbdc",
                                      border_width=2,
                                      border_color="#87A3DB")
-            pressed_button_image = self.image_Mult
             self.textbox.delete("0.0", "end")
 
     def button_equal_click(self):
@@ -500,8 +498,7 @@ class MainWindow(ctk.CTk):
             else:
                 self.textbox.insert("end", int(answer))
         else:
-            pressed_button.configure(image=pressed_button_image,
-                                     fg_color="#87A3DB",
+            pressed_button.configure(fg_color="#87A3DB",
                                      border_width=0)
             number2 = self.textbox.get("0.0", "end")
             if number2 != r"\s{*}":
@@ -551,6 +548,12 @@ class MainWindow(ctk.CTk):
                     number2 = ""
                     pressed_button = ""
 
+    def pressed(self,pressed_button):
+        pass
+
+    def unpressed(self, pressed_button):
+        pass
+
     def cleaning_dbz(self):
         global number1
         global number2
@@ -591,7 +594,6 @@ command = str()
 recent_command = str()
 recent_number2 = str()
 pressed_button = str()
-pressed_button_image = str()
 app = MainWindow()
 app.cleaning_hard()
 app.mainloop()
