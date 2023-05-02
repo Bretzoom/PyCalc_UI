@@ -1,7 +1,6 @@
 # Imports
 import tkinter
 import customtkinter as ctk
-from PIL import Image, ImageTk
 
 
 class MainWindow(ctk.CTk):
@@ -548,7 +547,7 @@ class MainWindow(ctk.CTk):
                     number2 = ""
                     pressed_button = ""
 
-    def pressed(self,pressed_button):
+    def pressed(self, pressed_button):
         pass
 
     def unpressed(self, pressed_button):
