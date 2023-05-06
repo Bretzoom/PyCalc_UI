@@ -1,6 +1,7 @@
 # Imports
 import tkinter
 import customtkinter as ctk
+import re
 
 
 class MainWindow(ctk.CTk):
@@ -283,6 +284,20 @@ class MainWindow(ctk.CTk):
         self.buttonBackspace.place(relx=0.5,
                                    rely=0.25,
                                    anchor=tkinter.N)
+        self.buttonChange = ctk.CTkButton(self,
+                                          width=100,
+                                          height=50,
+                                          border_width=0,
+                                          corner_radius=8,
+                                          fg_color="#87A3DB",
+                                          text="±",
+                                          text_color="white",
+                                          anchor="N",
+                                          font=("Comic Sans MS", 32),
+                                          command=self.button_change_click)
+        self.buttonChange.place(relx=0.9,
+                                rely=0.25,
+                                anchor=tkinter.N)
 
         # Buttons functions
 
@@ -363,7 +378,6 @@ class MainWindow(ctk.CTk):
             self.textbox.insert("end", "7")
         self.textbox.configure(state="disabled")
 
-
     def button8_click(self):
         global number1
         self.textbox.configure(state="normal")
@@ -374,7 +388,6 @@ class MainWindow(ctk.CTk):
         else:
             self.textbox.insert("end", "8")
         self.textbox.configure(state="disabled")
-
 
     def button9_click(self):
         global number1
@@ -387,7 +400,6 @@ class MainWindow(ctk.CTk):
             self.textbox.insert("end", "9")
         self.textbox.configure(state="disabled")
 
-
     def button0_click(self):
         global number1
         self.textbox.configure(state="normal")
@@ -398,7 +410,6 @@ class MainWindow(ctk.CTk):
         else:
             self.textbox.insert("end", "0")
         self.textbox.configure(state="disabled")
-
 
     def button_point_click(self):
         global number1
@@ -500,6 +511,14 @@ class MainWindow(ctk.CTk):
             self.textbox.delete("0.0", "end")
         self.textbox.configure(state="disabled")
 
+    def button_change_click(self):
+        self.textbox.configure(state="normal")
+        if re.search("-", self.textbox.get("0.0", "end")) is not None:
+            self.textbox.delete("0.0", "1.1")
+        else:
+            self.textbox.insert("0.0", "-")
+        self.textbox.configure(state="disabled")
+
     def button_equal_click(self):
         global number1
         global number2
@@ -576,11 +595,6 @@ class MainWindow(ctk.CTk):
                     number2 = ""
                     pressed_button = ""
         self.textbox.configure(state="disabled")
-    def pressed(self, pressed_button):
-        pass
-
-    def unpressed(self, pressed_button):
-        pass
 
     def cleaning_dbz(self):
         global number1
@@ -622,6 +636,11 @@ class MainWindow(ctk.CTk):
         self.textbox.delete(f"1.{str(index - 2)}")
         self.textbox.configure(state="disabled")
 
+    def first_zero(self):
+        self.textbox.configure(state="normal")
+        self.textbox.insert("0.0", "0")
+        self.textbox.configure(state="disabled")
+
 
 answer = float()
 number1 = str()
@@ -632,4 +651,5 @@ recent_number2 = str()
 pressed_button = str()
 app = MainWindow()
 app.cleaning_hard()
+app.first_zero()
 app.mainloop()
